@@ -1,33 +1,7 @@
-# IoT-Device-Monitoring-and-Control-System-using-MQTT-ESP32-Adafruit-IO-Wokwi-
-Hệ thống IoT giám sát và điều khiển thiết bị qua MQTT
-(ESP32 + Adafruit IO + Wokwi)
+🛰️ Hệ thống IoT giám sát và điều khiển thiết bị qua MQTT (ESP32 + Adafruit IO + Wokwi)
 
-📌 Giới thiệu
+Dự án xây dựng hệ thống IoT giúp giám sát và điều khiển thiết bị từ xa thông qua giao thức MQTT sử dụng vi điều khiển ESP32. Cảm biến DHT22 được dùng để thu thập dữ liệu nhiệt độ và độ ẩm, sau đó gửi lên nền tảng Adafruit IO để hiển thị và lưu trữ. Người dùng có thể điều khiển bật tắt các thiết bị như đèn LED xanh và LED đỏ thông qua giao diện web hoặc ứng dụng, đồng thời hệ thống tự động bật LED đỏ khi nhiệt độ vượt ngưỡng 60°C. Toàn bộ quá trình hoạt động được hiển thị trên Serial Monitor và được mô phỏng hoàn toàn trên nền tảng Wokwi.
 
-Dự án xây dựng hệ thống IoT giám sát và điều khiển thiết bị thông qua giao thức MQTT sử dụng ESP32.
-Dữ liệu cảm biến nhiệt độ và độ ẩm được gửi lên Adafruit IO, đồng thời người dùng có thể bật tắt thiết bị từ xa qua giao diện web.
-Dự án được mô phỏng trên nền tảng Wokwi.
+Dự án sử dụng ngôn ngữ C/C++ trong môi trường Arduino IDE, kết hợp các thư viện WiFi.h, PubSubClient.h và DHT.h để thực hiện kết nối mạng, giao tiếp MQTT và đọc dữ liệu cảm biến. Việc kết nối với Adafruit IO được thực hiện bằng tài khoản và khóa API cá nhân, đảm bảo tính bảo mật và ổn định trong truyền nhận dữ liệu.
 
-⚙️ Chức năng chính
-
-Đọc nhiệt độ và độ ẩm từ cảm biến DHT22
-Gửi dữ liệu cảm biến lên Adafruit IO qua MQTT
-Nhận lệnh điều khiển từ người dùng để bật tắt LED xanh và LED đỏ
-Tự động bật LED đỏ khi nhiệt độ vượt ngưỡng 60°C
-Hiển thị thông tin hoạt động trên Serial Monitor
-
-🧠 Công nghệ sử dụng
-
-Vi điều khiển: ESP32
-Cảm biến: DHT22
-Giao thức: MQTT
-Nền tảng Cloud: Adafruit IO
-Mô phỏng: Wokwi
-
-🚀 Cách chạy dự án
-
-Mở dự án trong Wokwi
-Cài đặt các thư viện cần thiết:
-WiFi.h, PubSubClient.h, DHT.h
-Nhập thông tin AIO_USERNAME và AIO_KEY từ tài khoản Adafruit IO
-Nạp code lên ESP32 và mở Serial Monitor để theo dõi kết quả
+Cấu trúc dự án bao gồm các tệp chính như sketch.ino (chứa mã nguồn chính), PubSubClient.cpp và PubSubClient.h (thư viện MQTT), cùng diagram.json mô tả sơ đồ mô phỏng phần cứng trong Wokwi. Sau khi cấu hình Wi-Fi và thông tin tài khoản Adafruit IO, chỉ cần nạp chương trình lên ESP32 và mở Serial Monitor để theo dõi các thông số hoạt động.
