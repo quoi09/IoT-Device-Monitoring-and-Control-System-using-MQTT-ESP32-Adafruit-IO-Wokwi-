@@ -1,0 +1,8 @@
+# Wokwi Library List
+# See https://docs.wokwi.com/guides/libraries
+
+DHT sensor library for ESPx
+LiquidCrystal I2C
+DHT22
+DHT sensor library
+Adafruit IO Arduino

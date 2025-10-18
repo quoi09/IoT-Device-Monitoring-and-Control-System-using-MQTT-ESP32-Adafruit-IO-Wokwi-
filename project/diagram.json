@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -312.1, "left": -5, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -397.2,
+      "left": 99.8,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -326.1,
+      "left": -168.6,
+      "attrs": { "temperature": "-23.8", "humidity": "12.5" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -397.2,
+      "left": 147.8,
+      "attrs": { "color": "cyan" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "led1:C", "esp:GND.1", "black", [ "v0" ] ],
+    [ "esp:GND.1", "led2:C", "black", [ "h86.1", "v-9.7" ] ],
+    [ "esp:D4", "led2:A", "green", [ "h95.7", "v-9.5" ] ],
+    [ "led1:A", "esp:D2", "green", [ "v163.2" ] ],
+    [ "esp:GND.1", "dht1:GND", "black", [ "h18.9", "v67.1", "h-220.8" ] ],
+    [ "esp:D14", "dht1:SDA", "green", [ "h-144", "v0.1" ] ],
+    [ "dht1:VCC", "esp:3V3", "red", [ "v124.8", "h278.4", "v-67.2" ] ]
+  ],
+  "dependencies": {}
+}
